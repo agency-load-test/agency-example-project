@@ -1,3 +1,9 @@
 package hr.onit.agency
 
-fun main(args: Array<String>) = Agency().main(args)
+import hr.onit.agency.service_calls.UserNamePasswordAuthenticator
+import org.openapitools.client.infrastructure.ApiClient
+
+fun main(args: Array<String>) {
+    ApiClient.builder.authenticator(UserNamePasswordAuthenticator())
+    Agency().main(args)
+}
